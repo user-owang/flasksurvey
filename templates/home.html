@@ -1,1 +1,8 @@
-{% extends 'base.html'%}
+{% extends 'base.html'%} {% block title %}Home{% endblock %} {% block content %}
+<h1>Choose a survey:</h1>
+<ul>
+  {% for key in surveys %}
+  <li><a href="/survey/{{key}}">{{key.capitalize()}}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

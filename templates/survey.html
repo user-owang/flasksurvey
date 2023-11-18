@@ -2,7 +2,7 @@
 block content %}
 <h1>{{survey.title}}</h1>
 <p>{{survey.instructions}}</p>
-<form action="/survey/{{survey_id}}/question">
+<form action="/survey/{{survey_id}}/question/0">
   <input type="submit" value="Start {{survey.title}}" />
 </form>
 {% endblock %}

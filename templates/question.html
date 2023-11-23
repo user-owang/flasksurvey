@@ -6,7 +6,7 @@ endblock %} {% block content %}
 <form action="/survey/{{survey_id}}/responses" method="POST">
   {% for choice in survey.questions[i].choices %}
   <label for="{{choice}}">
-    <input type="radio" name="question" id="{{choice}}" /> {{choice}}
+    <input type="radio" name="question" value="{{choice}}" /> {{choice}}
   </label>
   <br />
   {% endfor %} {% if survey.questions[i].allow_text %}

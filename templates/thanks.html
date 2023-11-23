@@ -1,4 +1,18 @@
 {% extends 'base.html' %} {% block title %}Thank you!{% endblock %} {% block
 content %}
 <h1>Thanks for completing the questionnaire!</h1>
+<h2>Here are your answers:</h2>
+<ul>
+  {% for index in indexes %} {% if session[test][index] is mapping %}
+  <li>
+    <b>{{survey.questions[index].question}}</b>
+    {{session[test][index]['answer']}}; <i>{{session[test][index]['text']}}</i>
+  </li>
+  {% else %}
+  <li>
+    <b>{{survey.questions[index].question}}</b> {{session[test][index]}} {%
+    endif %} {% endfor %}
+  </li>
+</ul>
+
 {% endblock %}
